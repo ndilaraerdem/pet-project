@@ -1,0 +1,29 @@
+<div class="container px-4">
+  <app-header></app-header>
+  <div class="row gx-3">
+    <div class="col">
+      <div class="p-3 border bg-light">
+        <app-sidebar></app-sidebar>
+      </div>
+    </div>
+    <div class="col-10 ">
+      <div class="p-5 h-100 d-block border bg-light ">
+        <h1>Welcome to Pet-Project <b>{{userData!.userName}} {{userData!.userSurname}}</b> !</h1><br>
+        <p class="lead">
+          You successfully Logged in ! <br><br>
+          You can edit your main info in <a routerLink="/profile">here</a>
+          or you can click ( <i class="fas fa-user"></i> ) icon from sidebar.<br><br>
+          You can display your addresses and also delete your address in <a routerLink="/address">here</a>
+          or you can just click ( <i class="fas fa-map-marker-alt"></i> ) icon.<br><br>
+          If you want to add a new address just click <a routerLink="/addNewAddress">here</a>.<br><br>
+          You can use this button ( <i class="fas fa-sign-out-alt"></i> ) to Logout.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="flex-row mt-3">
+    <div class="p-3 border bg-light">
+      <app-footer></app-footer>
+    </div>
+  </div>
+</div>

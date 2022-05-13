@@ -1,0 +1,19 @@
+<div class="container">
+    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+      <a routerLink="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+        <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
+        <span class="fs-4">Pet Project</span>
+      </a>
+
+      <ul class="nav nav-pills" *ngIf="isLoggedIn">
+        <li class="nav-item"><a routerLink="/home" class="nav-link">Home</a></li>
+        <li class="nav-item"><a routerLink="/profile" class="nav-link">Your Profile</a></li>
+        <li class="nav-item"><a routerLink="/addNewAddress" class="nav-link">Add New Address</a></li>
+        <li class="nav-item"><a routerLink="/address" class="nav-link">Search Address</a></li>
+      </ul>
+      <div class="col-md-3 text-end" *ngIf="!isLoggedIn">
+        <button routerLink="/" type="button" class="btn btn-outline-primary me-2">Login</button>
+        <button routerLink="/register" type="button" class="btn btn-primary">Register</button>
+      </div>
+    </header>
+  </div>

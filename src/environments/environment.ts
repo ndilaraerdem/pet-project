@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  ref : '74430d47fa16b4c53c0fe59510752c70',
+  url : 'https://www.jsonbulut.com/json/'
 };
 
 /*

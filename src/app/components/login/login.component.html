@@ -1,0 +1,28 @@
+<app-header></app-header>
+<div class="container mt-5 w-25">
+  <h2>LOGIN</h2>
+  <hr>
+<form [formGroup]="loginForm" (ngSubmit)="login()">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input formControlName="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input formControlName="password" type="password" class="form-control" id="exampleInputPassword1">
+    </div>
+    <button type="submit" class="btn btn-primary">Login</button>
+  </form>
+  <div id="emailHelp" class="form-text mt-3">
+    Don't have an account?
+    <a routerLink="/register">Register</a>
+  </div>
+  <hr>
+<!--   
+  <button (click)="getData()" class="btn btn-primary">Get data</button> |
+  <button (click)="updateData()" class="btn btn-primary">Update data</button> |
+  <button (click)="deleteData()" class="btn btn-primary">Delete data</button> |
+  <button (click)="patchData()" class="btn btn-primary ml-2">Patch data</button> | -->
+  
+</div>

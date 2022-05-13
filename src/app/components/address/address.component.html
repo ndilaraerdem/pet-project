@@ -1,0 +1,75 @@
+<div class="container px-4">
+  <app-header></app-header>
+  <div class="row gx-3">
+    <div class="col">
+      <div class="p-3 border bg-light">
+        <app-sidebar></app-sidebar>
+      </div>
+    </div>
+    <div class="col-10">
+      <div class="p-5 h-100 d-block border bg-light">
+        <div class="container-fluid" style="border:1px solid #cecece;">
+          <h2 class="my-4">Filter Search</h2>
+          <form class="row" [formGroup]="filterForm" (keyup)="searchAddress()">
+            <div class=" col-md-4 mb-3">
+              <label class="form-label">AddressType</label>
+              <input formControlName="addressType" class="form-control">
+            </div>
+            <div class="col-md-4 mb-3">
+              <label class="form-label">Address</label>
+              <input formControlName="address" class="form-control">
+            </div>
+            <div class="col-md-4 mb-3">
+              <label class="form-label">City</label>
+              <input formControlName="city" class="form-control">
+            </div>
+
+            <div class=" col-md-4 mb-3">
+              <label class="form-label">Country</label>
+              <input formControlName="country" class="form-control">
+            </div>
+            <div class="col-md-4 mb-3">
+              <label class="form-label">Postal Code</label>
+              <input formControlName="postalCode" class="form-control">
+            </div>
+          </form>
+        </div>
+        <div class="table-scrollable">
+          <table class="table  mt-5" style="background-color: white;">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Country</th>
+                <th scope="col">City</th>
+                <th scope="col">Address</th>
+                <th scope="col">Postal Code</th>
+                <th scope="col">Address Type</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of tempAddressList; let i = index">
+                <th scope="row">{{i+1}}</th>
+                <td>{{item.il}}</td>
+                <td>{{item.ilce}}</td>
+                <td>{{item.adres}}</td>
+                <td>{{item.kapiNo}}</td>
+                <td>{{item.not}}</td>
+                <td>
+                  <button routerLink="/addNewAddress" class="btn btn-primary">New</button>
+                  <button (click)="deleteAddress(item.id!)" class="btn btn-danger mx-3">Delete</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="flex-row mt-3">
+    <div class="p-3 border bg-light">
+      <app-footer></app-footer>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,42 @@
+<div class="container px-4">
+  <app-header></app-header>
+  <div class="row gx-3">
+    <div class="col">
+      <div class="p-3 border bg-light">
+        <app-sidebar></app-sidebar>
+      </div>
+    </div>
+    <div class="col-10">
+      <div class="p-5 h-100 d-block border bg-light">
+        <form [formGroup]="profileForm" (ngSubmit)="update()">
+          <div class="mb-3">
+            <label class="form-label">Name</label>
+            <input formControlName="userName" class="form-control">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Surname</label>
+            <input formControlName="userSurname" class="form-control" placeholder="surname">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Email</label>
+            <input formControlName="userEmail" type="email" class="form-control">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Phone</label>
+            <input formControlName="userPhone" class="form-control">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Password</label>
+            <input formControlName="userPass" type="password" class="form-control">
+          </div>
+          <button type="submit" class="btn btn-primary">Update</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="flex-row mt-3">
+    <div class="p-3 border bg-light">
+      <app-footer></app-footer>
+    </div>
+  </div>
+</div>

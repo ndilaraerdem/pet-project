@@ -1,0 +1,8 @@
+i{
+    font-size:30px;
+    color:#0d6efd;
+    transition: color .5s ease;
+}
+i:hover{
+    color:#034fc1;
+}

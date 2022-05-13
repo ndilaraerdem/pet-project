@@ -1,0 +1,30 @@
+<div>
+  <a [routerLink]="['/home']">
+    <div class="p-5 border-0 bg-light">
+      <div class="text-center">
+        <i class="fas fa-home"></i>
+      </div>
+    </div>
+  </a>
+  <a [routerLink]="['/profile']">
+    <div class="p-5 border-0 bg-light mt-2">
+      <div class="text-center">
+        <i class="fas fa-user"></i>
+      </div>
+    </div>
+  </a>
+  <a [routerLink]="['/address']">
+    <div class="p-5 border-0 bg-light mt-2">
+      <div class="text-center">
+        <i class="fas fa-map-marker-alt"></i>
+      </div>
+    </div>
+  </a>
+  <a (click)="logout()">
+    <div class="p-5 border-0 bg-light mt-2">
+      <div class="text-center">
+        <i class="fas fa-sign-out-alt"></i>
+      </div>
+    </div>
+  </a>
+</div>
