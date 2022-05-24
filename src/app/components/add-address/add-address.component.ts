@@ -9,17 +9,17 @@ import { environment } from 'src/environments/environment';
 @Component({
   selector: 'app-add-address',
   templateUrl: './add-address.component.html',
-  styleUrls: ['./add-address.component.css'],
+  styleUrls: ['./add-address.component.css'], //same
 })
 export class AddAddressComponent implements OnInit {
   addressAddForm: FormGroup = new FormGroup({
-    addressType: new FormControl('', [Validators.required]),
+    addressType: new FormControl('', [Validators.required]), //same
     address: new FormControl('', [Validators.required]),
     city: new FormControl('', [Validators.required]),
     country: new FormControl('', [Validators.required]),
     postalCode: new FormControl('', [Validators.required]),
   });
-  countries : any[] = [];
+  countries : any[] = []; //type
   constructor(
     private addressService: AddressService,
     private toastr: ToastrService,
@@ -30,7 +30,7 @@ export class AddAddressComponent implements OnInit {
     this.countries = countries();
   }
 
-  addAddress() {
+  addAddress() { //type
     const userData = getUser();
     const addressParams = {
       ref: environment.ref,
@@ -42,7 +42,7 @@ export class AddAddressComponent implements OnInit {
       kapiNo: this.addressAddForm.value['postalCode'],
       notBilgi: this.addressAddForm.value['addressType'],
     };
-    this.addressService.createAddress(addressParams).subscribe((data) => {
+    this.addressService.createAddress(addressParams).subscribe((data) => { //unused variable
       this.toastr.success('You added new address');
       this.router.navigate(['/address'])
     });

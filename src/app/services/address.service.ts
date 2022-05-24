@@ -13,7 +13,7 @@ export class AddressService {
 
   getAddressList(): Observable<IAddress> {
     const userData = getUser();
-    console.log("userData",userData!.userId);
+    console.log("userData",userData!.userId); // remove all console.log() before push in main branch (or before create PR)
     const sendParams = {
       ref: environment.ref,
       musterilerID: userData!.userId
@@ -22,15 +22,15 @@ export class AddressService {
     return this.http.get<IAddress>(path, { params: sendParams });
   }
 
-  createAddress(params: any){
+  createAddress(params: any){ // types
     const path = environment.url + 'addressAdd.php';
-    console.log(path);
-    console.log(params);
-    
+    console.log(path); // same
+    console.log(params); // same, use console for test purposes only when it's needed
+
     return this.http.get(path, { params: params });
   }
-  
-  removeAddress(params: any){
+
+  removeAddress(params: any){ // types
     const path = environment.url + 'addressDelete.php';
     return this.http.get(path, { params: params });
   }

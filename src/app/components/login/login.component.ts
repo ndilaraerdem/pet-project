@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http'; // remove if not use
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -10,12 +10,12 @@ import { environment } from 'src/environments/environment';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css'],
+  styleUrls: ['./login.component.css'], //same
 })
 export class LoginComponent implements OnInit {
-  user: any = [];
+  user: any = []; // type
   loginForm: FormGroup = new FormGroup({
-    email: new FormControl('', [Validators.email, Validators.required]),
+    email: new FormControl('', [Validators.email, Validators.required]), //same
     password: new FormControl('', [Validators.required, Validators.minLength(5)]),
   });
 
@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  login() {
+  login() { //type
     const sendParams = {
       ref: environment.ref,
       userEmail: this.loginForm.controls['email'].value,

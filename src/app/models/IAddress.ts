@@ -4,7 +4,7 @@ export interface IAddress {
 
 export interface AddressList {
     id?:           string;
-    musterilerID?: string;
+    musterilerID?: string; // language
     il?:           string;
     ilce?:         string;
     Mahalle?:      string;

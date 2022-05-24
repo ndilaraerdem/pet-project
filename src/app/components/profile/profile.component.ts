@@ -8,11 +8,11 @@ import { environment } from 'src/environments/environment';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.css'],
+  styleUrls: ['./profile.component.css'], //same
 })
 export class ProfileComponent implements OnInit {
   profileForm: FormGroup = new FormGroup({
-    userId: new FormControl('', [Validators.required]),
+    userId: new FormControl('', [Validators.required]), // same
     userName: new FormControl('', [Validators.required]),
     userSurname: new FormControl('', [Validators.required]),
     userPhone: new FormControl('', [Validators.required]),
@@ -34,7 +34,7 @@ export class ProfileComponent implements OnInit {
     this.initFormValue();
   }
 
-  update() {
+  update() { //type
     if (this.profileForm.valid) {
       const sendParams = {
         ref: environment.ref,

@@ -12,7 +12,7 @@ export class LoginService {
 
   path = environment.url + 'userLogin.php';
 
-  userLogin(params: any): Observable<IUser> {
+  userLogin(params: any): Observable<IUser> { // type
     return this.http.get<IUser>(this.path, { params: params });
   }
 }

@@ -1,19 +1,20 @@
 <div>
-  <a [routerLink]="['/home']">
+  <!-- <a [routerLink]="['/home']"> don't use property binding with strings -->
+  <a routerLink="/home"> <!-- we can just use it like this -->
     <div class="p-5 border-0 bg-light">
       <div class="text-center">
         <i class="fas fa-home"></i>
       </div>
     </div>
   </a>
-  <a [routerLink]="['/profile']">
+  <a [routerLink]="['/profile']"> <!-- the same -->
     <div class="p-5 border-0 bg-light mt-2">
       <div class="text-center">
         <i class="fas fa-user"></i>
       </div>
     </div>
   </a>
-  <a [routerLink]="['/address']">
+  <a [routerLink]="['/address']"> <!-- the same -->
     <div class="p-5 border-0 bg-light mt-2">
       <div class="text-center">
         <i class="fas fa-map-marker-alt"></i>

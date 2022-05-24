@@ -6,11 +6,11 @@ import { Router } from '@angular/router';
 })
 export class AuthService {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) { } // remove router, constructor and import if not use
 
   isLoggedIn():boolean{
     const token = sessionStorage.getItem('user')
-    if (token) {
+    if (token) { // you can simplify it to: "return !!token"
       return true;
     } else {
       return false;

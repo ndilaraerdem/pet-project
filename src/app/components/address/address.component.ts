@@ -13,7 +13,7 @@ import { environment } from 'src/environments/environment';
 export class AddressComponent implements OnInit {
   allAddress: AddressList[] = [];
   tempAddressList: AddressList[] = [];
-  searchText: string = '';
+  searchText: string = ''; //remove if not use
 
   filterForm: FormGroup = new FormGroup({
     addressType: new FormControl('', [Validators.required]),
@@ -28,7 +28,7 @@ export class AddressComponent implements OnInit {
     this.getAddress();
   }
 
-  searchAddress() {
+  searchAddress() { //type
     this.tempAddressList = this.allAddress.filter(
       (address) =>
         address.il
@@ -58,13 +58,13 @@ export class AddressComponent implements OnInit {
     );
   }
 
-  getAddress() {
+  getAddress() { //type
     this.addressService.getAddressList().subscribe((data) => {
       this.allAddress = data.addressList!;
       this.tempAddressList = data.addressList!;
     });
   }
-  deleteAddress(addressID: string) {
+  deleteAddress(addressID: string) { //type
     const answer = confirm('Are you sure?');
     if (answer) {
       const userData = getUser();
@@ -74,7 +74,7 @@ export class AddressComponent implements OnInit {
         adresID: addressID,
       };
 
-      this.addressService.removeAddress(sendParams).subscribe((data) => {
+      this.addressService.removeAddress(sendParams).subscribe((data) => { //unused variable
         this.getAddress();
       });
     }

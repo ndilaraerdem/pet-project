@@ -10,7 +10,7 @@ import { getUser } from 'src/app/utils';
 export class HomeComponent implements OnInit {
   userData = getUser();
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) {} // remove if not use
 
-  ngOnInit(): void {}
+  ngOnInit(): void {} // remove if not use
 }

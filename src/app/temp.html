@@ -1,3 +1,4 @@
+<!-- what is this file for? it would be better to remove it -->
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
@@ -38,7 +39,7 @@ export class ProfileComponent implements OnInit {
   }
 
   update() {
-    
+
     if (this.profileForm.valid) {
     console.log(this.profileForm.value);
 
@@ -77,11 +78,11 @@ export class ProfileComponent implements OnInit {
   }
 
   initFormValue(){
-    this.profileForm.controls['userId'].setValue(getUser()!.userId); 
-    this.profileForm.controls['userName'].setValue(getUser()!.userName); 
-    this.profileForm.controls['userSurname'].setValue(getUser()!.userSurname); 
-    this.profileForm.controls['userEmail'].setValue(getUser()!.userEmail); 
-    this.profileForm.controls['userPhone'].setValue(getUser()!.userPhone); 
+    this.profileForm.controls['userId'].setValue(getUser()!.userId);
+    this.profileForm.controls['userName'].setValue(getUser()!.userName);
+    this.profileForm.controls['userSurname'].setValue(getUser()!.userSurname);
+    this.profileForm.controls['userEmail'].setValue(getUser()!.userEmail);
+    this.profileForm.controls['userPhone'].setValue(getUser()!.userPhone);
   }
 }
 
@@ -97,7 +98,7 @@ export class ProfileComponent implements OnInit {
           <form [formGroup]="profileForm" (ngSubmit)="update()">
               <div class="mb-3">
                 <label  class="form-label">Name</label>
-                <input formControlName="userName" class="form-control"  > 
+                <input formControlName="userName" class="form-control"  >
               </div>
               <div class="mb-3">
                 <label class="form-label">Surname</label>

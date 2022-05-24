@@ -6,7 +6,12 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './inc/header/header.component';
 import { FooterComponent } from './inc/footer/footer.component';
 import { SidebarComponent } from './inc/sidebar/sidebar.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+// What does folder name "inc" mean? Probably we could use something like "public", "layout", etc.
+// Also, it would be better to create some "index.ts" and export all files from that folder.
+// In this case you would have 3 imports like this:
+// import { HeaderComponent, FooterComponent, SidebarComponent } from './inc';
+
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'; // remove unneeded import
 import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -35,8 +40,8 @@ import { AddAddressComponent } from './components/add-address/add-address.compon
     ProfileComponent,
     AddressComponent,
     AddAddressComponent,
-    
-  
+
+
   ],
   imports: [
     BrowserModule,
@@ -54,7 +59,7 @@ import { AddAddressComponent } from './components/add-address/add-address.compon
     MatSelectModule
 
   ],
-  providers: [],
+  providers: [], // remove if not use
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { } // prettier

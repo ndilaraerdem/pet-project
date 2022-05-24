@@ -1,11 +1,11 @@
-export interface IUser {
-    user: User[];
+export interface IUser { // probably "UsersData" would be more understandable
+    user: User[]; // would be better to rename it to "users"
 }
 
 export interface User {
     durum:    boolean;
     mesaj:    string;
-    bilgiler?: Bilgiler;
+    bilgiler?: Bilgiler; // please, use English to make it understandable for everyone who will look at your code
 }
 
 export interface Bilgiler {

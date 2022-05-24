@@ -12,14 +12,14 @@ import {
   styleUrls: ['./sidebar.component.css'],
 })
 export class SidebarComponent implements OnInit {
-  faUser = faUser;
-  faHouse = faHouse;
-  faLocationDot = faLocationDot
-  faRightFromBracket = faRightFromBracket;
+  faUser = faUser; // remove if not use
+  faHouse = faHouse; // remove if not use
+  faLocationDot = faLocationDot // remove if not use
+  faRightFromBracket = faRightFromBracket; // remove if not use
   constructor(private router: Router) {}
 
-  ngOnInit(): void {}
-  logout() {
+  ngOnInit(): void {} // remove if not use
+  logout() { // add type
     const alert = confirm('Are you sure you want to log out?');
     if (alert) {
       sessionStorage.clear();

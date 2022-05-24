@@ -1,11 +1,11 @@
-<app-header></app-header>
+<app-header></app-header> <!-- better to have some "layout component" and set header with footer there and between - just add "router-outlet" to change components by routing-->
 <div class="container mt-5 w-75">
   <mat-horizontal-stepper [linear]="isLinear" #stepper>
     <mat-step [stepControl]="userForm">
       <div class="mt-3 w-25">
         <form [formGroup]="userForm">
           <ng-template matStepLabel>Main info</ng-template>
-          <mat-form-field>
+          <mat-form-field> <!-- use *ngFor for iteration-->
             <mat-label>Name</mat-label>
             <textarea matInput placeholder="Name" formControlName="firstName" class="form-control" required></textarea>
           </mat-form-field>
@@ -53,10 +53,10 @@
       <div class="container mt-3 w-25">
         <form [formGroup]="addressForm">
           <ng-template matStepLabel>Address Information</ng-template>
-          <mat-form-field>
+          <mat-form-field> <!-- use *ngFor for iteration-->
             <mat-label>Address Type</mat-label>
             <mat-select formControlName="addressType">
-              <mat-option value="Billing Address"> Billing Address</mat-option>
+              <mat-option value="Billing Address"> Billing Address</mat-option> <!-- use *ngFor for iteration-->
               <mat-option value="Shipment Address">Shipment Address</mat-option>
               <mat-option value="Home Address">Home Address</mat-option>
             </mat-select>
@@ -99,7 +99,7 @@
       <div class="row gx-3">
         <div class="col-6">
           <mat-list>
-            <mat-list-item> <strong>Name:</strong> {{ this.userForm.value.firstName }}</mat-list-item>
+            <mat-list-item> <strong>Name:</strong> {{ this.userForm.value.firstName }}</mat-list-item> <!-- use *ngFor for iteration-->
             <mat-list-item> <strong>Surname:</strong> {{ this.userForm.value.lastName }}</mat-list-item>
             <mat-list-item> <strong>Phone:</strong> {{ this.userForm.value.phone }}</mat-list-item>
             <mat-list-item> <strong>Email:</strong> {{ this.userForm.value.email }}</mat-list-item>
@@ -107,7 +107,7 @@
         </div>
         <div class="col-6">
           <mat-list>
-            <mat-list-item> <strong>Address Type:</strong> {{ this.addressForm.value.addressType }}</mat-list-item>
+            <mat-list-item> <strong>Address Type:</strong> {{ this.addressForm.value.addressType }}</mat-list-item> <!-- use *ngFor for iteration-->
             <mat-list-item> <strong>Address:</strong> {{ this.addressForm.value.address }}</mat-list-item>
             <mat-list-item> <strong>City:</strong> {{ this.addressForm.value.city }}</mat-list-item>
             <mat-list-item> <strong>Country:</strong> {{ this.addressForm.value.country }}</mat-list-item>

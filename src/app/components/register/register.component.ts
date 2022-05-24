@@ -16,25 +16,25 @@ import { environment } from 'src/environments/environment';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css'],
+  styleUrls: ['./register.component.css'], // same
 })
 
 export class RegisterComponent implements OnInit {
   isLinear:boolean = true;
-  //userId = '';
+  //userId = ''; // remove comments
   countries : any[] = []
 
   userForm: FormGroup = new FormGroup({
-    firstName: new FormControl('', [Validators.required]),
+    firstName: new FormControl('', [Validators.required]), // better to use "null" as initial value
     lastName: new FormControl('', [Validators.required]),
     phone: new FormControl('', [Validators.required]),
     email: new FormControl('', [Validators.email, Validators.required]),
     passwords: new FormGroup({
        pass : new FormControl('',[Validators.required]),
        confirmedPass : new FormControl('',[Validators.required])
-    }, {validators:this.passwordCompareCheck}), 
+    }, {validators:this.passwordCompareCheck}),
     confirmPassword: new FormControl('')
-  });  
+  });
 
   addressForm: FormGroup = new FormGroup({
     addressType: new FormControl('', [Validators.required]),
@@ -61,11 +61,11 @@ export class RegisterComponent implements OnInit {
 
   passwordCompareCheck(passwords:AbstractControl):any{
     if(passwords.get("pass")!.value !== passwords.get('confirmedPass')!.value){
-      return {invalid:true};
+      return {invalid:true}; // prettier
     }
   }
 
-  register() {   
+  register() {
     if (this.userForm.valid && this.addressForm.valid) {
       this.sendUserInfo();
     } else {
@@ -73,7 +73,7 @@ export class RegisterComponent implements OnInit {
     }
   }
 
-  sendUserInfo() {
+  sendUserInfo() { // type
     //Sending Main Info
     const sendParams = {
       ref: environment.ref,
@@ -91,7 +91,7 @@ export class RegisterComponent implements OnInit {
       }
     });
   }
-  sendAddressInfo(userId: any) {
+  sendAddressInfo(userId: any) { // type
     //Sending Address Info
     const addressParams = {
       ref: environment.ref,
@@ -103,7 +103,7 @@ export class RegisterComponent implements OnInit {
       kapiNo: this.addressForm.value['postalCode'],
       notBilgi: this.addressForm.value['addressType'],
     };
-    this.addressService.createAddress(addressParams).subscribe((data) => {
+    this.addressService.createAddress(addressParams).subscribe((data) => { // unused variable
       this.toastr.success('Register Successful!');
       this.router.navigate(['/']);
     });
